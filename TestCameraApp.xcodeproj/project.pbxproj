@@ -13,6 +13,8 @@
 		676953F82A7FAB3600630799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676953F62A7FAB3600630799 /* Main.storyboard */; };
 		676953FA2A7FAB3700630799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 676953F92A7FAB3700630799 /* Assets.xcassets */; };
 		676953FD2A7FAB3700630799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676953FB2A7FAB3700630799 /* LaunchScreen.storyboard */; };
+		676954052A7FB36000630799 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676954042A7FB36000630799 /* CameraManager.swift */; };
+		676954072A7FB37C00630799 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676954062A7FB37C00630799 /* CameraViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		676953F92A7FAB3700630799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		676953FC2A7FAB3700630799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		676953FE2A7FAB3700630799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		676954042A7FB36000630799 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		676954062A7FB37C00630799 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				676953F02A7FAB3600630799 /* AppDelegate.swift */,
 				676953F22A7FAB3600630799 /* SceneDelegate.swift */,
 				676953F42A7FAB3600630799 /* ViewController.swift */,
+				676954042A7FB36000630799 /* CameraManager.swift */,
+				676954062A7FB37C00630799 /* CameraViewModel.swift */,
 				676953F62A7FAB3600630799 /* Main.storyboard */,
 				676953F92A7FAB3700630799 /* Assets.xcassets */,
 				676953FB2A7FAB3700630799 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				676954072A7FB37C00630799 /* CameraViewModel.swift in Sources */,
 				676953F52A7FAB3600630799 /* ViewController.swift in Sources */,
 				676953F12A7FAB3600630799 /* AppDelegate.swift in Sources */,
+				676954052A7FB36000630799 /* CameraManager.swift in Sources */,
 				676953F32A7FAB3600630799 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +298,9 @@
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCameraApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to capture media";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone to capture videos with sound";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires gallery to save photos and videos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +329,9 @@
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCameraApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to capture media";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone to capture videos with sound";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires gallery to save photos and videos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

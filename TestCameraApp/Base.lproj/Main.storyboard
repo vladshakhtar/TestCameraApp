@@ -1,24 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestCameraApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-zN-Vnw" userLabel="CameraView">
+                                <rect key="frame" x="0.0" y="59" width="430" height="739"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx7-26-H90" userLabel="ControlsView">
+                                <rect key="frame" x="0.0" y="798" width="430" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDW-Co-cOh" userLabel="CaptureMediaButton">
+                                        <rect key="frame" x="182.33333333333334" y="25.000000000000004" width="65.666666666666657" height="50.333333333333343"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePadding="0.0" buttonSize="large">
+                                            <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="captureMediaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KmR-3Z-pgM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-n4-ar6" userLabel="SwitchCameraButton">
+                                        <rect key="frame" x="354.33333333333331" y="33" width="55.666666666666686" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.2.circlepath.camera.fill" catalog="system">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="switchCameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1X-Fb-XsS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMl-Ta-BVe" userLabel="SwitchMediaButton">
+                                        <rect key="frame" x="20" y="32.666666666666629" width="69" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Photo"/>
+                                        <connections>
+                                            <action selector="switchMediaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfX-sb-mQi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="eMl-Ta-BVe" firstAttribute="leading" secondItem="fx7-26-H90" secondAttribute="leading" constant="20" id="0LA-Zw-Qsm"/>
+                                    <constraint firstAttribute="trailing" secondItem="UVB-n4-ar6" secondAttribute="trailing" constant="20" id="Fva-R5-lMn"/>
+                                    <constraint firstItem="kDW-Co-cOh" firstAttribute="centerY" secondItem="fx7-26-H90" secondAttribute="centerY" id="REt-iO-vmP"/>
+                                    <constraint firstItem="UVB-n4-ar6" firstAttribute="centerY" secondItem="fx7-26-H90" secondAttribute="centerY" id="fyA-P5-iqd"/>
+                                    <constraint firstItem="eMl-Ta-BVe" firstAttribute="centerY" secondItem="fx7-26-H90" secondAttribute="centerY" id="ujX-7G-szN"/>
+                                    <constraint firstItem="kDW-Co-cOh" firstAttribute="centerX" secondItem="fx7-26-H90" secondAttribute="centerX" id="v1s-aC-DHr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fx7-26-H90" firstAttribute="top" secondItem="omJ-zN-Vnw" secondAttribute="bottom" id="2YZ-Tb-enP"/>
+                            <constraint firstItem="fx7-26-H90" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Xp-wq-jnN"/>
+                            <constraint firstItem="fx7-26-H90" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AdA-kS-exm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="omJ-zN-Vnw" secondAttribute="bottom" constant="100" id="IRG-S0-a5R"/>
+                            <constraint firstItem="omJ-zN-Vnw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JGK-sz-Qg0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="omJ-zN-Vnw" secondAttribute="trailing" id="WUE-Pn-5B9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fx7-26-H90" secondAttribute="trailing" id="a55-yK-B9U"/>
+                            <constraint firstItem="omJ-zN-Vnw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ieU-JC-I9z"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="omJ-zN-Vnw" id="VHW-fS-tcU"/>
+                        <outlet property="captureMediaButton" destination="kDW-Co-cOh" id="3nS-F1-Xps"/>
+                        <outlet property="switchCameraButton" destination="UVB-n4-ar6" id="s7M-11-YyU"/>
+                        <outlet property="switchMediaButton" destination="eMl-Ta-BVe" id="TYN-cK-kpY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.74418604651163" y="3.8626609442060089"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.triangle.2.circlepath.camera.fill" catalog="system" width="128" height="93"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
